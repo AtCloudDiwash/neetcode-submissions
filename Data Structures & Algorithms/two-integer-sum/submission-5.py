@@ -1,0 +1,10 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        store = defaultdict(int)
+        
+        for i in range(len(nums)):
+            if nums[i] not in store:
+                store[target - nums[i]] = i
+            else:
+                return [store[nums[i]], i]
+        return []
